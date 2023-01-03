@@ -1,0 +1,8 @@
+<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+	<g fill-rule="nonzero" fill="none">
+		<path class="responsiveUsp_icon_svg-stroke" d="M27 12H13v17h14V12z" stroke-width="2"></path>
+		<path class="responsiveUsp_icon_svg-stroke" stroke-width="2" d="M16 20l3.031 3.035L23.983 17"></path>
+		<path class="responsiveUsp_icon_svg-fill" d="M16 10a2 2 0 0 1 2-2v2h-2zM16 11h8v2h-8zM24 10a2 2 0 0 0-2-2v2h2zM18 8h4v2h-4z"></path>
+		<path class="responsiveUsp_icon_svg-fill" d="M22 10h2v2h-2zM16 10h2v2h-2z"></path>
+	</g>
+</svg>
