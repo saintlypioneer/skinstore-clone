@@ -44,3 +44,35 @@ function updateBreadcrums(){
 function updateQuantity(id, typeOfOperation){
 
 }
+
+function onLoadLanding(){
+
+}
+
+function onLoadProductPage(){
+
+}
+
+function onLoadSpecificProductPage(){
+
+}
+
+function onLoadCheckoutPage(){
+
+}
+
+function onLoadSigninPage(){
+    
+}
+
+function onSignIn(){
+
+}
+
+function onSignUp(){
+    
+}
+
+function onLoadSignupPage(){
+    
+}
