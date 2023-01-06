@@ -200,113 +200,119 @@
         </a>
       </div>
     </div>
-    <div class="parent" style="display: flex; justify-content: space-between;
-    width: 65%;
-    margin: auto;
-    ">
-      <div class="child1" style="background-color: white;width: 48%; padding: 20px;" >
-        <p style="    font-weight: 700;
-        font-style: normal;
-        font-family: Lato, sans-serif;
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.5px;">Existing Customers</p>
-        <div >
-          <p style="font-weight: 700;
+    <div class="signin_div">
+      <div class="parent" style="display: flex; justify-content: space-between;
+      width: 65%;
+      margin: auto;
+      margin-top: 50px;
+      ">
+        <div class="child1" style="background-color: white;width: 48%; padding: 20px;" >
+          <p style="    font-weight: 700;
           font-style: normal;
           font-family: Lato, sans-serif;
-          font-size: 14px;
-          line-height: 20px;
-          letter-spacing: 0.2px;
-          margin-top: 30px;"><sup>*</sup>Email address</p>
-          <input type="text" style="width: 100%; border: 1px solid black; height: 45px; border-radius: 5px; margin-top: 5px;">
-        </div>
-        <div >
-          <p style="font-weight: 700;
-          font-style: normal;
-          font-family: Lato, sans-serif;
-          font-size: 14px;
-          line-height: 20px;
-          letter-spacing: 0.2px;
-          margin-top: 30px;"><sup>*</sup>Password</p>
-          <div style="border: 1px solid black; display: flex; align-items: center; height: 45px;  margin: auto; border-radius: 5px; margin-top: 5px;">
-            <input type="text" style="width: 90%; border: none; height: 35px;">
-            <p style="margin-right: 5px;">show</p>
+          font-size: 24px;
+          line-height: 32px;
+          letter-spacing: -0.5px;">Existing Customers</p>
+          <div >
+            <p style="font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            margin-top: 30px;"><sup>*</sup>Email address</p>
+            <input type="text" style="width: 100%; border: 1px solid black; height: 45px; border-radius: 5px; margin-top: 5px;">
           </div>
+          <div >
+            <p style="font-weight: 700;
+            font-style: normal;
+            font-family: Lato, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            margin-top: 30px;"><sup>*</sup>Password</p>
+            <div style="border: 1px solid black; display: flex; align-items: center; height: 45px;  margin: auto; border-radius: 5px; margin-top: 5px;">
+              <input type="password" style="width: 90%; border: none; height: 35px;">
+              <p style="margin-right: 5px;" >show</p>
+            </div>
+          </div>
+          <p style="text-decoration: underline; font-weight: 300;
+          font-style: normal;
+          font-family: Lato, sans-serif;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.2px;
+          margin-top: 40px;">FORGOTTEN YOUR PASSWORD?</p>
+                 <button style="background-color: black; color: white;    font-weight: 300;
+                 font-style: normal;
+                 font-family: Lato, sans-serif;
+                 font-size: 14px;
+                 line-height: 20px;
+                 letter-spacing: 0.2px;
+                 height: 40px;
+                 width: 100%;
+                 margin-top: 30px;"
+                 onclick="onSignIn()">SIGN IN</button>
+  
+          <p style="margin-top: 30px;
+              font-weight: 300;
+      font-style: normal;
+      font-family: Lato, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.2px;">Or, Continue with</p>
+  
+  
+          <div class="quick_ways" style="  display: flex;
+          margin-bottom: 35px;">
+            <button class="fb" style="
+            display: flex;
+            width: 45%;
+            margin: auto;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: 1px solid black;
+            margin-top: 20px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-uaK5MQMEY1_ds2IHnWNvKen6q96rbt2rgQ&usqp=CAU" alt="" style="height: 35px; width:35px;">
+              Facebook</button>
+            <button class="google" style="
+            display: flex;
+            width: 45%;
+            margin: auto;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: 1px solid black;
+            margin-top: 20px;"><img src="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1" alt="" style="height: 35px; width:35px;"> Google</button>
+          </div>
+  
         </div>
-        <p style="text-decoration: underline; font-weight: 300;
-        font-style: normal;
-        font-family: Lato, sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 0.2px;
-        margin-top: 40px;">FORGOTTEN YOUR PASSWORD?</p>
-               <button style="background-color: black; color: white;    font-weight: 300;
-               font-style: normal;
-               font-family: Lato, sans-serif;
-               font-size: 14px;
-               line-height: 20px;
-               letter-spacing: 0.2px;
-               height: 40px;
-               width: 100%;
-               margin-top: 30px;">SIGN IN</button>
-
-        <p style="margin-top: 30px;
-            font-weight: 300;
-    font-style: normal;
-    font-family: Lato, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.2px;">Or, Continue with</p>
-
-
-        <div class="quick_ways" style="  display: flex;
-        margin-bottom: 35px;">
-          <button class="fb" style="
-          display: flex;
-          width: 45%;
-          margin: auto;
+  
+  
+  
+        <div class="child2" style="background-color: white; width: 48%; padding: 20px; height: 150px;">
+          <p style="    font-weight: 700;
+          font-style: normal;
+          font-family: Lato, sans-serif;
+          font-size: 24px;
+          line-height: 32px;
+          letter-spacing: -0.5px;">New Customers</p>
+          <button style="background-color: black; color: white;  font-weight: 300;
+          font-style: normal;
+          font-family: Lato, sans-serif;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.2px;
           height: 40px;
-          justify-content: center;
-          align-items: center;
-          background-color: white;
-          border: 1px solid black;
-          margin-top: 20px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-uaK5MQMEY1_ds2IHnWNvKen6q96rbt2rgQ&usqp=CAU" alt="" style="height: 35px; width:35px;">
-            Facebook</button>
-          <button class="google" style="
-          display: flex;
-          width: 45%;
-          margin: auto;
-          height: 40px;
-          justify-content: center;
-          align-items: center;
-          background-color: white;
-          border: 1px solid black;
-          margin-top: 20px;"><img src="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1" alt="" style="height: 35px; width:35px;"> Google</button>
+          width: 100%;
+          margin-top: 30px;"
+          onclick="window.location.href='./signup.html'">REGISTER</button>
         </div>
-
-      </div>
-
-
-
-      <div class="child2" style="background-color: white; width: 48%; padding: 20px; height: 150px;">
-        <p style="    font-weight: 700;
-        font-style: normal;
-        font-family: Lato, sans-serif;
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.5px;">New Customers</p>
-        <button style="background-color: black; color: white;  font-weight: 300;
-        font-style: normal;
-        font-family: Lato, sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 0.2px;
-        height: 40px;
-        width: 100%;
-        margin-top: 30px;">REGISTER</button>
       </div>
     </div>
+
     <script src="./global.js"></script>
 
   </body>
