@@ -184,7 +184,7 @@
     </div>
 
     <div
-      style="width: 100%; display: flex; flex-direction: column"
+      style="width: 100%; display: flex; flex-direction: column; padding-bottom: 10px;"
       class="header"
       id="header"
     >
@@ -195,6 +195,7 @@
             src="./assets/svg/vector12.svg"
             alt=""
             srcset=""
+            onclick="window.location.href='./index.html'"
           />
         </div>
         <div style="flex: 2; display: flex; align-items: center" class="search">
@@ -250,13 +251,14 @@
               align-items: center;
               gap: 5px;
             "
+            onclick="window.location.href='./signin.html'"
           >
             <img
               style="max-width: 20px"
               src="./assets/images/user.png"
               alt=""
             />
-            <span>Account</span>
+            <span id="user_name">Account</span>
           </button>
           <button
             style="
@@ -268,6 +270,7 @@
               align-items: center;
               gap: 5px;
             "
+            onclick="window.location.href='./cart.html'"
           >
             <img
               style="max-width: 20px"
@@ -323,8 +326,10 @@
           "
           href="#"
           class="text_button"
+
+          onclick="redirectToCategories('Bath & Body')"
         >
-          Sale
+          Bath & Body
         </a>
         <a
           style="
@@ -335,6 +340,7 @@
             transition: all 0.5s;
           "
           href="#"
+          onclick="redirectToCategories('SkinCare')"
           class="text_button"
         >
           Skin Care
@@ -348,6 +354,7 @@
             transition: all 0.5s;
           "
           href="#"
+          onclick="redirectToCategories('Hair Care')"
           class="text_button"
         >
           Hair
@@ -362,6 +369,8 @@
           "
           href="#"
           class="text_button"
+
+          onclick="redirectToCategories('Makup and Cosmetics')"
         >
           Makeup
         </a>
@@ -590,204 +599,208 @@ We carry maintenance products for every imaginable hair type from fine to thick 
         </div>
       </div>
     </div>
-    <hr style="margin-bottom: -20px;margin-bottom: 20px;">
-    <div class="footer" id="footer" style="display: flex; gap:50px; line-height: 10px; padding: 30px;">
-      <div class="left" style="width: 40%;">
-     
-        <p style="    font-family: Helvetica,Arial,sans-serif;
-        font-size: 14px;
-        line-height: 1.4;
-        color: #2e3337;
-        font-weight: 700;
-        text-transform: none;">Sign up to our email list and receive 20% off your next order</p>
-        <button style="width:20%; height:40px; color :white; background-color:black;margin-bottom: 50px;margin-top: 30px; ">SIGN UP</button>
-        <hr style="border-top:1px solid black;border-bottom: none;margin-bottom: 20px;">
-        <p style="font-family: Helvetica,Arial,sans-serif;
-        font-size: 14px;
-        line-height: 1.4;
-        color: #2e3337;
-        font-weight: 700;
-        text-transform: none;
-        margin-bottom: 10px;">Help & Information</p>
-        <div style="display: flex; gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
-          <img src="./assets/svg/vector3.svg" alt="">
-          <p style="line-height: 1.4;">Customer Service</p>
-        </div>
-        <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
-          <img src="assets/svg/vector4.svg" alt="">
-          <p>Delivery Information</p>
-        </div>
-        <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
-          <img src="assets/svg/vector.svg" alt="">
-          <p>Returns & Refunds</p>
-        </div>
-        <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
-          <img src="assets/svg/vector2.svg" alt="">
-          <p>Help Center</p>
-        </div>
-        <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
-          <img src="assets/svg/vector5.svg" alt="">
-          <p>Track my order</p>
-        </div>
-        <p style="line-height: 1.4; margin-top: 5px;margin-bottom: 10px;">Accessibility</p>
-        <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
-          <img src="assets/svg/vector6.svg" alt="">
-          <p>Cookie Settings</p>
-        </div>
-      </div>
-      <div class="right" style=" margin-top: 5px;">
-        <div class="right_top">
+    <div class="footer" id="footer">
+      <hr style="margin-bottom: -20px;margin-bottom: 20px;">
+      <div class="footer_content" id="footer_content" style="display: flex; gap:50px; line-height: 10px; padding: 30px;">
+        <div class="left" style="width: 40%;">
+       
+          <p style="    font-family: Helvetica,Arial,sans-serif;
+          font-size: 14px;
+          line-height: 1.4;
+          color: #2e3337;
+          font-weight: 700;
+          text-transform: none;">Sign up to our email list and receive 20% off your next order</p>
+          <button style="width:20%; height:40px; color :white; background-color:black;margin-bottom: 50px;margin-top: 30px; ">SIGN UP</button>
+          <hr style="border-top:1px solid black;border-bottom: none;margin-bottom: 20px;">
           <p style="font-family: Helvetica,Arial,sans-serif;
           font-size: 14px;
           line-height: 1.4;
           color: #2e3337;
           font-weight: 700;
           text-transform: none;
-          margin-top: 13px;
-          margin-top: -5px;
-          margin-bottom: 25px;">Connect with us</p>
-          <div style="display: flex;gap: 20px;">
-            <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="" style="width:40px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="" style="width: 40px; border-radius: 50%;">
-            <img src="https://play-lh.googleusercontent.com/wIf3HtczQDjHzHuu7vezhqNs0zXAG85F7VmP7nhsTxO3OHegrVXlqIh_DWBYi86FTIGk" alt="" style="width: 40px; border-radius: 50%;">
-            <img src="https://play-lh.googleusercontent.com/dVsv8Hc4TOUeLFAahxR8KANg22W9dj2jBsTW1VHv3CV-5NCZjP9D9i2j5IpfVx2NTB8" alt="" style="width: 40px;">
-            <img src="https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo" alt="" style="width: 40px; border-radius: 50%;">
+          margin-bottom: 10px;">Help & Information</p>
+          <div style="display: flex; gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
+            <img src="./assets/svg/vector3.svg" alt="">
+            <p style="line-height: 1.4;">Customer Service</p>
+          </div>
+          <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
+            <img src="assets/svg/vector4.svg" alt="">
+            <p>Delivery Information</p>
+          </div>
+          <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
+            <img src="assets/svg/vector.svg" alt="">
+            <p>Returns & Refunds</p>
+          </div>
+          <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
+            <img src="assets/svg/vector2.svg" alt="">
+            <p>Help Center</p>
+          </div>
+          <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
+            <img src="assets/svg/vector5.svg" alt="">
+            <p>Track my order</p>
+          </div>
+          <p style="line-height: 1.4; margin-top: 5px;margin-bottom: 10px;">Accessibility</p>
+          <div style="display: flex;gap:10px;margin-top: 5px;align-items: center;margin-bottom: 10px;">
+            <img src="assets/svg/vector6.svg" alt="">
+            <p>Cookie Settings</p>
           </div>
         </div>
-  
-        <div class="right_bottom" style="display: flex; margin-top: 61px; gap:90px;padding:0 10px">
-          <div>
-            <hr style="border-top:1px solid black;border-bottom: none;margin-bottom: 20px;margin-top: -6px;">
-          <p style="font-family: Helvetica,Arial,sans-serif;
-          font-size: 14px;
-          line-height: 1.4;
-          color: #2e3337;
-          font-weight: 700;
-          text-transform: none;
-          margin-bottom: 10px;">  About SkinStore</p>
-          <p  style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Key Workers Discount</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">About Us</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Affiliate Prograrn</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Brand Directory</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Coupon Codes</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Refer A</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Student Discount</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">Join SkinStore Experts</p>
+        <div class="right" style=" margin-top: 5px;">
+          <div class="right_top">
+            <p style="font-family: Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2e3337;
+            font-weight: 700;
+            text-transform: none;
+            margin-top: 13px;
+            margin-top: -5px;
+            margin-bottom: 25px;">Connect with us</p>
+            <div style="display: flex;gap: 20px;">
+              <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="" style="width:40px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="" style="width: 40px; border-radius: 50%;">
+              <img src="https://play-lh.googleusercontent.com/wIf3HtczQDjHzHuu7vezhqNs0zXAG85F7VmP7nhsTxO3OHegrVXlqIh_DWBYi86FTIGk" alt="" style="width: 40px; border-radius: 50%;">
+              <img src="https://play-lh.googleusercontent.com/dVsv8Hc4TOUeLFAahxR8KANg22W9dj2jBsTW1VHv3CV-5NCZjP9D9i2j5IpfVx2NTB8" alt="" style="width: 40px;">
+              <img src="https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo" alt="" style="width: 40px; border-radius: 50%;">
+            </div>
           </div>
-          <div>
-            <hr style="border-top:1px solid black;border-bottom: none;margin-bottom: 20px;margin-top: -6px;">
-          <p style="font-family: Helvetica,Arial,sans-serif;
-          font-size: 14px;
-          line-height: 1.4;
-          color: #2e3337;
-          font-weight: 700;
-          text-transform: none;
-          margin-bottom: 10px;">   Legal</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;" >   Cookie Information</p>
-          <p  style="    font-family:Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">   Privacy Policy</p>
-          <p  style="    font-family: Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;"> Terms & Conditions</p>
-          <p  style="    font-family:Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #2e3337;
-  font-weight: 300;
-  text-transform: none;
-  margin-bottom: 10px;">  Modern Slavery Statement</p>
-          </div>
-          <div>
-            <hr style="border-top:1px solid black;border-bottom: none; margin-bottom: 20px;margin-top: -6px;">
-          <p style="font-family: Helvetica,Arial,sans-serif;
-          font-size: 14px;
-          line-height: 1.4;
-          color: #2e3337;
-          font-weight: 700;
-          text-transform: none;
-          margin-bottom: 10px;">  How To Contact Us</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-          font-size: 14px;
-          line-height: 1.4;
-          color: #2e3337;
-          font-weight: 300;
-          text-transform: none;
-          margin-bottom: 10px;">Message Us</p>
-          <p style="    font-family: Helvetica,Arial,sans-serif;
-          font-size: 14px;
-          line-height: 1.4;
-          color: #2e3337;
-          font-weight: 300;
-          text-transform: none;
-          margin-bottom: 10px;">Free Beauty Consultations</p>
+    
+          <div class="right_bottom" style="display: flex; margin-top: 61px; gap:90px;padding:0 10px">
+            <div>
+              <hr style="border-top:1px solid black;border-bottom: none;margin-bottom: 20px;margin-top: -6px;">
+            <p style="font-family: Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2e3337;
+            font-weight: 700;
+            text-transform: none;
+            margin-bottom: 10px;">  About SkinStore</p>
+            <p  style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Key Workers Discount</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">About Us</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Affiliate Prograrn</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Brand Directory</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Coupon Codes</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Refer A</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Student Discount</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">Join SkinStore Experts</p>
+            </div>
+            <div>
+              <hr style="border-top:1px solid black;border-bottom: none;margin-bottom: 20px;margin-top: -6px;">
+            <p style="font-family: Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2e3337;
+            font-weight: 700;
+            text-transform: none;
+            margin-bottom: 10px;">   Legal</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;" >   Cookie Information</p>
+            <p  style="    font-family:Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">   Privacy Policy</p>
+            <p  style="    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;"> Terms & Conditions</p>
+            <p  style="    font-family:Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2e3337;
+    font-weight: 300;
+    text-transform: none;
+    margin-bottom: 10px;">  Modern Slavery Statement</p>
+            </div>
+            <div>
+              <hr style="border-top:1px solid black;border-bottom: none; margin-bottom: 20px;margin-top: -6px;">
+            <p style="font-family: Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2e3337;
+            font-weight: 700;
+            text-transform: none;
+            margin-bottom: 10px;">  How To Contact Us</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2e3337;
+            font-weight: 300;
+            text-transform: none;
+            margin-bottom: 10px;">Message Us</p>
+            <p style="    font-family: Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #2e3337;
+            font-weight: 300;
+            text-transform: none;
+            margin-bottom: 10px;">Free Beauty Consultations</p>
+            </div>
           </div>
         </div>
-      </div>
-  
-  </div>
+    
+    </div>
+    </div>
+
+
 </body>
 <script src="./global.js"></script>
 </html>

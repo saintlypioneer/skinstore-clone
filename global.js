@@ -1,4 +1,5 @@
 const items = [
+
    //Skincare products
    {
     id: 1,
@@ -162,53 +163,462 @@ const items = [
     category: "Bath & Body",
     price: 48.00,
  }
+
 ];
 
-function addToCart(id){
-    // this id is from items
-    // localStorage key name => 'cart'
+const item_categories = [
+   {category: "Skincare", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/04/round_widget_ss_homepage_-_Untitled_Page-062904.png"},
+   {category: "Hair Care", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/06/round_widget_ss_homepage_-_Untitled_Page_%281%29-062906.png"},
+   {category: "Makeup and Cosmetics", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/26/round_widget_ss_homepage_-_Untitled_Page_%282%29-062926.png"},
+   {category: "Bath & Body", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/07/round_widget_ss_homepage_-_Untitled_Page_%286%29-063207.png"}
+];
+
+// Global Jobs for JS
+if (JSON.parse(localStorage.getItem('user'))!=null){
+   document.getElementById('user_name').innerHTML = JSON.parse(localStorage.getItem('user')).name
 }
 
-function getFilteredProducts(category){
-    // filter the product by category from items and display using render function
+function addToCart(id) {
+  // this id is from items
+  // localStorage key name => 'cart'
+  const product = items.filter((item)=>item.id==id);
+  console.log(product)
+  const loc = JSON.parse(localStorage.getItem('cart')) || [];
+  loc.push(product[0]);
+  localStorage.setItem('cart', JSON.stringify(loc));
 }
 
-function updateBreadcrums(){
-
+function getFilteredProducts(category) {
+  // filter the product by category from items and display using render function
 }
 
-function updateQuantity(id, typeOfOperation){
-
-}
-
-function onLoadLanding(){
-
-}
-
-function onLoadProductPage(){
-
-}
-
-function onLoadSpecificProductPage(){
-
-}
-
-function onLoadCheckoutPage(){
-
-}
-
-function onLoadSigninPage(){
+function updateBreadcrums() {
     
 }
 
-function onSignIn(){
-
-}
-
-function onSignUp(){
+function updateQuantity(id, typeOfOperation) {
     
 }
 
-function onLoadSignupPage(){
+function onLoadLanding() {
+    console.log("Landing");
+    loadCategories();
+   //  loadProducts for 'New Year Fresh Start'
+   var doc = document.getElementById("container_landing_all_products");
+   doc.innerHTML = "";
+   items.forEach(item=>{
+      var x = `
+      <div
+      style="
+        max-width: 500px;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+      "
+      class="item_card_with_rating"
+      id="item_card_with_rating"
+    >
+      <div class="image">
+        <img
+          style="width: 100%"
+          src="${item.image_url}"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        "
+        class="content"
+      >
+        <h1>
+          ${item.name}
+        </h1>
+        <span
+          style="
+            border: 1px solid orangered;
+            width: fit-content;
+            padding: 5px;
+            font-weight: lighter;
+            font-size: small;
+          "
+          class="tag"
+          >${item.category}</span
+        >
+        <span style="font-weight: bold; font-size: 1.4rem" class="price"
+          >₹ ${item.price}</span
+        >
+        <button
+          style="
+            padding: 7px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+          "
+          class="primart_btn"
+          onclick="addToCart(${item.id})"
+        >
+          QUICK BUY
+        </button>
+      </div>
+    </div>
+      `;
+      doc.innerHTML += x;
+   });
+   // above New and Trending products
+   doc = document.getElementById("container_landing_products_2");
+   doc.innerHTML = "";
+   for (var i=items.length/2-1; i<items.length-1; i++){
+      var x = `
+      <div
+      style="
+        max-width: 500px;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+      "
+      class="item_card_with_rating"
+      id="item_card_with_rating"
+    >
+      <div class="image">
+        <img
+          style="width: 100%"
+          src="${items[i].image_url}"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        "
+        class="content"
+      >
+        <h1>
+        ${items[i].name}
+        </h1>
+        <span
+          style="font-weight: normal; font-size: 1.4rem; text-align: center"
+          class="price"
+          >₹ ${items[i].price}</span
+        >
+        <button
+          style="
+            padding: 7px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+          "
+          class="primart_btn"
+          onclick="addToCart(${items[i].id})"
+        >
+          QUICK BUY
+        </button>
+      </div>
+    </div>
+      `;
+      doc.innerHTML += x;
+   }
+   // for New and Trending products
+   const temp_category = item_categories[Math.floor(Math.random()*(item_categories.length))].category;
+   doc = document.getElementById("container_right_image_products_landing");
+   doc.innerHTML = "";
+   items.forEach(item=>{
+      if (item.category==temp_category){
+         var x = `
+         <div
+         style="
+         max-width: 500px;
+         font-size: 0.6rem;
+         display: flex;
+         flex-direction: column;
+         "
+         class="item_card_with_rating"
+         id="item_card_with_rating"
+      >
+         <div class="image">
+         <img
+            style="width: 100%"
+            src="${item.image_url}"
+            alt=""
+            srcset=""
+         />
+         </div>
+         <div
+         style="
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+         "
+         class="content"
+         >
+         <h1>
+            ${item.name}
+         </h1>
+         <span
+            style="
+               font-weight: normal;
+               font-size: 1.4rem;
+               text-align: center;
+            "
+            class="price"
+            >₹ ${item.price}</span
+         >
+         <button
+            style="
+               padding: 7px;
+               background-color: black;
+               color: white;
+               border: 1px solid black;
+            "
+            class="primart_btn"
+
+          onclick="addToCart(${item.id})"
+         >
+            QUICK BUY
+         </button>
+         </div>
+      </div>
+         
+         `;
+         doc.innerHTML += x;
+      }
+   })
+}
+
+function redirectToCategories(category){
+   localStorage.setItem('category', category);
+   window.location.href = './product_page.html'
+}
+
+function loadCategories(){
+   const doc = document.getElementById("circular_img_with_heading_landing");
+   doc.innerHTML = '';
+   item_categories.forEach(item => {
+      const html = `
+      <div id="child" onclick="redirectToCategories('${item.category}')">
+         <img
+         style="width: 80%"
+         src="${item.img}"
+         alt="${item.category}"
+         />
+      </div>
+      `;
+      doc.innerHTML += html;
+   })
+}
+
+function onLoadProductPage() {
+    document.getElementById('products_page_breadcrum').innerHTML = localStorage.getItem('category') || 'View All';
+    loadCategories()
+    //  loadProducts for Best Sellers
+   var doc = document.getElementById("container_landing_all_products");
+   doc.innerHTML = "";
+   items.forEach(item=>{
+      if (item.category.toLowerCase()==localStorage.getItem('category').toLowerCase()){
+         var x = `
+      <div
+      style="
+        max-width: 500px;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+      "
+      class="item_card_with_rating"
+      id="item_card_with_rating"
+    >
+      <div class="image">
+        <img
+          style="width: 100%"
+          src="${item.image_url}"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        "
+        class="content"
+      >
+        <h1>
+          ${item.name}
+        </h1>
+        <span
+          style="
+            border: 1px solid orangered;
+            width: fit-content;
+            padding: 5px;
+            font-weight: lighter;
+            font-size: small;
+          "
+          class="tag"
+          >${item.category}</span
+        >
+        <span style="font-weight: bold; font-size: 1.4rem" class="price"
+          >₹ ${item.price}</span
+        >
+        <button
+          style="
+            padding: 7px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+          "
+          class="primart_btn"
+          onclick="addToCart(${item.id})"
+        >
+          QUICK BUY
+        </button>
+      </div>
+    </div>
+      `;
+      doc.innerHTML += x;
+      }
+   });
+}
+
+function onLoadSpecificProductPage() {
+    const productId = localStorage.getItem('specificProductId') || '1';
+    const specific_product = items.filter(item=>item.id==productId)[0];
+    document.getElementById('specific_product_image').innerHTML = `
+    <img width="100%" src="${specific_product.image_url}" alt="" srcset="">
+    `;
+    document.getElementById('specific_product_name').innerHTML = specific_product.name;
+    document.getElementById('specific_product_price').innerHTML = '₹ '+specific_product.price;
+}
+
+function onLoadCheckoutPage() {
     
+}
+
+function onLoadSigninPage() {
+    
+}
+
+function onSignIn() {
+  var signInArr = JSON.parse(localStorage.getItem("signUpUserDetails")) || [];
+  // select the signin button as below--
+  // var signInBtn=document.querySelector(".signin_div>div >div:nth-child(1) >input:nth-child(1)");
+
+  var email = document.querySelector(
+    ".signin_div .child1 div:nth-child(2) input"
+  ).value;
+  var pass = document.querySelector(
+    ".signin_div >.parent >.child1 div:nth-child(3) input"
+  ).value;
+
+  // console.log(email,pass);
+  if (email == "" || pass == "") {
+    alert("Fill all inputs");
+  } else {
+    var flag = 0;
+    signInArr.map(function (ele) {
+      if (ele.pass == pass && ele.email == email) {
+        flag = 1;
+      }
+    });
+    if (flag == 1) {
+      alert("SIgn In Sucessful");
+      window.location.href = "index.html";
+    } else {
+      alert("Please enter valid email or password");
+    }
+  }
+}
+
+function onSignUp() {
+  var signUpUserDetailsArr =
+    JSON.parse(localStorage.getItem("signUpUserDetails")) || [];
+  const doc = document.getElementsByClassName("signup_div");
+  var name = document.querySelector(".signup_div >div .inp1 input ");
+  name = name.value;
+
+  var email = document.querySelector(".signup_div >div .inp2 input ");
+  email = email.value;
+
+  var email_confirm = document.querySelector(".signup_div >div .inp3 input ");
+  email_confirm = email_confirm.value;
+
+  var pass = document.querySelector(".signup_div >div .inp4 input ");
+  pass = pass.value;
+
+  var pass_confirm = document.querySelector(".signup_div >div .inp5 input ");
+  pass_confirm = pass_confirm.value;
+
+  var phone = document.querySelector(".signup_div >div .inp6 input ");
+  phone = phone.value;
+  // console.log(name,email,email_confirm,pass,pass_confirm,phone);
+  if (
+    name == "" ||
+    email == "" ||
+    email_confirm == "" ||
+    pass == "" ||
+    pass_confirm == ""
+  ) {
+    alert("Please fill all the required inputs");
+  } else if (
+    !email.includes("@gmail.com") &&
+    !email.includes("@rediffmail.com")
+  ) {
+    alert("Enter a Valid Gmail or Rediffmail");
+  } else if (email != email_confirm) {
+    alert("Missmatch in Email");
+  } else if (pass.length < 8) {
+    alert("Use Atleast 8 characters for password");
+  } else if (pass != pass_confirm) {
+    alert("Missmatch in Password");
+  } else if (phone.length != 10 && phone.length >= 1) {
+    alert("Enter Valid Phone Number");
+  } else {
+    alert("SIGN UP SUCCESSFUL");
+    var obj = {
+      name: name,
+      email: email,
+      pass: pass,
+    };
+    // console.log(obj);
+    signUpUserDetailsArr.push(obj);
+    localStorage.setItem(
+      "signUpUserDetails",
+      JSON.stringify(signUpUserDetailsArr)
+    );
+    window.location.href = "./index.html";
+  }
+
+  //not taking phone number as it is optional in web page **
+}
+
+function onLoadSignupPage() {
+
+}
+
+
+var passwordDiv = document.querySelector(" input[type='password']");
+if (passwordDiv != null) {
+  passwordDiv.parentNode.children[1].addEventListener("click", showPassFunc);
+  console.log(passwordDiv.parentNode.children[1]);
+
+  function showPassFunc() {
+    // console.log(passwordDiv.children[0]);
+    passwordDiv.parentNode.children[0].setAttribute("type", "text");
+    passwordDiv.parentNode.children[1].innerHTML = "hide";
+    passwordDiv.parentNode.children[1].addEventListener("click", hidePassFunc);
+  }
+  function hidePassFunc() {
+    passwordDiv.parentNode.children[0].setAttribute("type", "password");
+    passwordDiv.parentNode.children[1].innerHTML = "show";
+    passwordDiv.parentNode.children[1].addEventListener("click", showPassFunc);
+  }
 }
