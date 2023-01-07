@@ -21,7 +21,7 @@
       /* } */
     </style>
   </head>
-  <body>
+  <body onload="onLoadLanding()">
     <!-- Header -->
     <div
       style="width: 100%; display: flex; flex-direction: column; padding-bottom: 10px;"
@@ -35,6 +35,7 @@
             src="./assets/svg/vector12.svg"
             alt=""
             srcset=""
+            onclick="window.location.href='./index.html'"
           />
         </div>
         <div style="flex: 2; display: flex; align-items: center" class="search">
@@ -90,13 +91,14 @@
               align-items: center;
               gap: 5px;
             "
+            onclick="window.location.href='./signin.html'"
           >
             <img
               style="max-width: 20px"
               src="./assets/images/user.png"
               alt=""
             />
-            <span>Account</span>
+            <span id="user_name">Account</span>
           </button>
           <button
             style="
@@ -108,6 +110,7 @@
               align-items: center;
               gap: 5px;
             "
+            onclick="window.location.href='./cart.html'"
           >
             <img
               style="max-width: 20px"
@@ -163,8 +166,10 @@
           "
           href="#"
           class="text_button"
+
+          onclick="redirectToCategories('Bath & Body')"
         >
-          Sale
+          Bath & Body
         </a>
         <a
           style="
@@ -175,6 +180,7 @@
             transition: all 0.5s;
           "
           href="#"
+          onclick="redirectToCategories('SkinCare')"
           class="text_button"
         >
           Skin Care
@@ -188,6 +194,7 @@
             transition: all 0.5s;
           "
           href="#"
+          onclick="redirectToCategories('Hair Care')"
           class="text_button"
         >
           Hair
@@ -202,6 +209,8 @@
           "
           href="#"
           class="text_button"
+
+          onclick="redirectToCategories('Makup and Cosmetics')"
         >
           Makeup
         </a>
@@ -300,10 +309,10 @@
                 " src="./assets/images/image-137.png" alt="">
                 <div style="font-size: 1.3rem;
                 color: white;" class="left_bottom">
-                    <p style="font-size: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit assumenda quos sapiente cumque
-                        facere
-                        vero! Sit ipsam deleniti vero architecto.</p>
-                    <button style="
+                    <p style="font-size: 1rem;">Skin care is a range of practices that support skin integrity, enhance its appearance, and relieve skin conditions. They can include nutrition, avoidance of excessive sun exposure, and appropriate use of emollients.</p>
+                    <button
+                    onclick="redirectToCategories('Skincare')"
+                    style="
                         padding: 10px 15px;
             margin-top: 20px;
             background-color: white;
@@ -350,52 +359,11 @@
       Shop by Category
     </div>
     <div
-      class="circular_img_with_heading"
-      id="circular_img_with_heading"
+      class="circular_img_with_heading_landing"
+      id="circular_img_with_heading_landing"
       style="display: flex; justify-content: space-between; margin-left: 20px"
     >
-      <div id="child">
-        <img
-          style="width: 80%"
-          src="https://static.thcdn.com/images/small/webp/widgets/121-us/04/round_widget_ss_homepage_-_Untitled_Page-062904.png"
-          alt="img1"
-        />
-      </div>
-      <div id="child">
-        <img
-          style="width: 80%"
-          src="https://static.thcdn.com/images/small/webp/widgets/121-us/06/round_widget_ss_homepage_-_Untitled_Page_%281%29-062906.png"
-          alt="img2"
-        />
-      </div>
-      <div id="child">
-        <img
-          style="width: 80%"
-          src="https://static.thcdn.com/images/small/webp/widgets/121-us/26/round_widget_ss_homepage_-_Untitled_Page_%282%29-062926.png"
-          alt="img3"
-        />
-      </div>
-      <div id="child">
-        <img
-          style="width: 80%"
-          src="https://static.thcdn.com/images/small/webp/widgets/121-us/11/round_widget_ss_homepage_-_Untitled_Page_%283%29-063011.png"
-          alt="img4"
-        />
-      </div>
-      <div id="child">
-        <img
-          style="width: 80%"
-          src="https://static.thcdn.com/images/small/webp/widgets/121-us/07/round_widget_ss_homepage_-_Untitled_Page_%286%29-063207.png"
-          alt="img5"
-        />
-      </div>
-      <div id="child">
-        <img
-          style="width: 80%"
-          src="https://static.thcdn.com/images/small/webp/widgets/121-us/32/round_widget_ss_homepage_-_Untitled_Page_%285%29-063132.png"
-          alt="img6"
-        />
-      </div>
+      
     </div>
     <!-- Tab groups -->
     <div
@@ -457,12 +425,13 @@
     <div
       style="
         display: grid;
-        grid-template-columns: repeat(11, 250px);
+        grid-template-columns: repeat(20, 250px);
         width: 100%;
         overflow-x: scroll;
         grid-template-rows: repeat(1, 1fr);
       "
-      class="container"
+      class="container_landing_all_products"
+      id="container_landing_all_products"
     >
       <div
         style="
@@ -522,586 +491,7 @@
           </button>
         </div>
       </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="
-              border: 1px solid orangered;
-              width: fit-content;
-              padding: 5px;
-              font-weight: lighter;
-              font-size: small;
-            "
-            class="tag"
-            >Lorem, ipsum dolor.</span
-          >
-          <span style="font-weight: bold; font-size: 1.4rem" class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
+      
     </div>
     <!-- Circular Image with Heading and Button -->
     <div style="padding: 2rem;" class="circular_img_with_heading_and_button" id="circular_img_with_heading_and_button" >
@@ -1190,11 +580,12 @@
     <div
       style="
         display: grid;
-        grid-template-columns: repeat(11, 350px);
+        grid-template-columns: repeat(10, 350px);
         width: 100%;
         overflow-x: scroll;
       "
-      class="container"
+      class="container_landing_products_2"
+      id="container_landing_products_2"
     >
       <div
         style="
@@ -1245,496 +636,7 @@
           </button>
         </div>
       </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
-      <div
-        style="
-          max-width: 500px;
-          font-size: 0.6rem;
-          display: flex;
-          flex-direction: column;
-        "
-        class="item_card_with_rating"
-        id="item_card_with_rating"
-      >
-        <div class="image">
-          <img
-            style="width: 100%"
-            src="./assets/images/image-13.jpg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div
-          style="
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          "
-          class="content"
-        >
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-            corrupti!
-          </h1>
-          <span
-            style="font-weight: normal; font-size: 1.4rem; text-align: center"
-            class="price"
-            >$ 31.23</span
-          >
-          <button
-            style="
-              padding: 7px;
-              background-color: black;
-              color: white;
-              border: 1px solid black;
-            "
-            class="primart_btn"
-          >
-            QUICK BUY
-          </button>
-        </div>
-      </div>
+      
     </div>
     <!-- div with left Image and Item Card with Ratings on right -->
     <div class="left_img_with_right_item_cards">
@@ -1759,277 +661,13 @@
             flex: 1;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(6, 350px);
+            grid-template-columns: repeat(5, 350px);
             overflow-x: scroll;
             align-items: center;
           "
-          class="container_right"
+          class="container_right_image_products_landing"
+          id="container_right_image_products_landing"
         >
-          <div
-            style="
-              max-width: 500px;
-              font-size: 0.6rem;
-              display: flex;
-              flex-direction: column;
-            "
-            class="item_card_with_rating"
-            id="item_card_with_rating"
-          >
-            <div class="image">
-              <img
-                style="width: 100%"
-                src="./assets/images/image-13.jpg"
-                alt=""
-                srcset=""
-              />
-            </div>
-            <div
-              style="
-                padding: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-              "
-              class="content"
-            >
-              <h1>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                corrupti!
-              </h1>
-              <span
-                style="
-                  font-weight: normal;
-                  font-size: 1.4rem;
-                  text-align: center;
-                "
-                class="price"
-                >$ 31.23</span
-              >
-              <button
-                style="
-                  padding: 7px;
-                  background-color: black;
-                  color: white;
-                  border: 1px solid black;
-                "
-                class="primart_btn"
-              >
-                QUICK BUY
-              </button>
-            </div>
-          </div>
-          <div
-            style="
-              max-width: 500px;
-              font-size: 0.6rem;
-              display: flex;
-              flex-direction: column;
-            "
-            class="item_card_with_rating"
-            id="item_card_with_rating"
-          >
-            <div class="image">
-              <img
-                style="width: 100%"
-                src="./assets/images/image-13.jpg"
-                alt=""
-                srcset=""
-              />
-            </div>
-            <div
-              style="
-                padding: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-              "
-              class="content"
-            >
-              <h1>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                corrupti!
-              </h1>
-              <span
-                style="
-                  font-weight: normal;
-                  font-size: 1.4rem;
-                  text-align: center;
-                "
-                class="price"
-                >$ 31.23</span
-              >
-              <button
-                style="
-                  padding: 7px;
-                  background-color: black;
-                  color: white;
-                  border: 1px solid black;
-                "
-                class="primart_btn"
-              >
-                QUICK BUY
-              </button>
-            </div>
-          </div>
-          <div
-            style="
-              max-width: 500px;
-              font-size: 0.6rem;
-              display: flex;
-              flex-direction: column;
-            "
-            class="item_card_with_rating"
-            id="item_card_with_rating"
-          >
-            <div class="image">
-              <img
-                style="width: 100%"
-                src="./assets/images/image-13.jpg"
-                alt=""
-                srcset=""
-              />
-            </div>
-            <div
-              style="
-                padding: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-              "
-              class="content"
-            >
-              <h1>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                corrupti!
-              </h1>
-              <span
-                style="
-                  font-weight: normal;
-                  font-size: 1.4rem;
-                  text-align: center;
-                "
-                class="price"
-                >$ 31.23</span
-              >
-              <button
-                style="
-                  padding: 7px;
-                  background-color: black;
-                  color: white;
-                  border: 1px solid black;
-                "
-                class="primart_btn"
-              >
-                QUICK BUY
-              </button>
-            </div>
-          </div>
-          <div
-            style="
-              max-width: 500px;
-              font-size: 0.6rem;
-              display: flex;
-              flex-direction: column;
-            "
-            class="item_card_with_rating"
-            id="item_card_with_rating"
-          >
-            <div class="image">
-              <img
-                style="width: 100%"
-                src="./assets/images/image-13.jpg"
-                alt=""
-                srcset=""
-              />
-            </div>
-            <div
-              style="
-                padding: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-              "
-              class="content"
-            >
-              <h1>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                corrupti!
-              </h1>
-              <span
-                style="
-                  font-weight: normal;
-                  font-size: 1.4rem;
-                  text-align: center;
-                "
-                class="price"
-                >$ 31.23</span
-              >
-              <button
-                style="
-                  padding: 7px;
-                  background-color: black;
-                  color: white;
-                  border: 1px solid black;
-                "
-                class="primart_btn"
-              >
-                QUICK BUY
-              </button>
-            </div>
-          </div>
-          <div
-            style="
-              max-width: 500px;
-              font-size: 0.6rem;
-              display: flex;
-              flex-direction: column;
-            "
-            class="item_card_with_rating"
-            id="item_card_with_rating"
-          >
-            <div class="image">
-              <img
-                style="width: 100%"
-                src="./assets/images/image-13.jpg"
-                alt=""
-                srcset=""
-              />
-            </div>
-            <div
-              style="
-                padding: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-              "
-              class="content"
-            >
-              <h1>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                corrupti!
-              </h1>
-              <span
-                style="
-                  font-weight: normal;
-                  font-size: 1.4rem;
-                  text-align: center;
-                "
-                class="price"
-                >$ 31.23</span
-              >
-              <button
-                style="
-                  padding: 7px;
-                  background-color: black;
-                  color: white;
-                  border: 1px solid black;
-                "
-                class="primart_btn"
-              >
-                QUICK BUY
-              </button>
-            </div>
-          </div>
           <div
             style="
               max-width: 500px;

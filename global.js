@@ -184,9 +184,26 @@ const items = [
   },
 ];
 
+const item_categories = [
+   {category: "Skincare", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/04/round_widget_ss_homepage_-_Untitled_Page-062904.png"},
+   {category: "Hair Care", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/06/round_widget_ss_homepage_-_Untitled_Page_%281%29-062906.png"},
+   {category: "Makeup and Cosmetics", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/26/round_widget_ss_homepage_-_Untitled_Page_%282%29-062926.png"},
+   {category: "Bath & Body", img: "https://static.thcdn.com/images/small/webp/widgets/121-us/07/round_widget_ss_homepage_-_Untitled_Page_%286%29-063207.png"}
+];
+
+// Global Jobs for JS
+if (JSON.parse(localStorage.getItem('user'))!=null){
+   document.getElementById('user_name').innerHTML = JSON.parse(localStorage.getItem('user')).name
+}
+
 function addToCart(id) {
   // this id is from items
   // localStorage key name => 'cart'
+  const product = items.filter((item)=>item.id==id);
+  console.log(product)
+  const loc = JSON.parse(localStorage.getItem('cart')) || [];
+  loc.push(product[0]);
+  localStorage.setItem('cart', JSON.stringify(loc));
 }
 
 function getFilteredProducts(category) {
@@ -202,15 +219,302 @@ function updateQuantity(id, typeOfOperation) {
 }
 
 function onLoadLanding() {
-    
+    console.log("Landing");
+    loadCategories();
+   //  loadProducts for 'New Year Fresh Start'
+   var doc = document.getElementById("container_landing_all_products");
+   doc.innerHTML = "";
+   items.forEach(item=>{
+      var x = `
+      <div
+      style="
+        max-width: 500px;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+      "
+      class="item_card_with_rating"
+      id="item_card_with_rating"
+    >
+      <div class="image">
+        <img
+          style="width: 100%"
+          src="${item.image_url}"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        "
+        class="content"
+      >
+        <h1>
+          ${item.name}
+        </h1>
+        <span
+          style="
+            border: 1px solid orangered;
+            width: fit-content;
+            padding: 5px;
+            font-weight: lighter;
+            font-size: small;
+          "
+          class="tag"
+          >${item.category}</span
+        >
+        <span style="font-weight: bold; font-size: 1.4rem" class="price"
+          >₹ ${item.price}</span
+        >
+        <button
+          style="
+            padding: 7px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+          "
+          class="primart_btn"
+          onclick="addToCart(${item.id})"
+        >
+          QUICK BUY
+        </button>
+      </div>
+    </div>
+      `;
+      doc.innerHTML += x;
+   });
+   // above New and Trending products
+   doc = document.getElementById("container_landing_products_2");
+   doc.innerHTML = "";
+   for (var i=items.length/2-1; i<items.length-1; i++){
+      var x = `
+      <div
+      style="
+        max-width: 500px;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+      "
+      class="item_card_with_rating"
+      id="item_card_with_rating"
+    >
+      <div class="image">
+        <img
+          style="width: 100%"
+          src="${items[i].image_url}"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        "
+        class="content"
+      >
+        <h1>
+        ${items[i].name}
+        </h1>
+        <span
+          style="font-weight: normal; font-size: 1.4rem; text-align: center"
+          class="price"
+          >₹ ${items[i].price}</span
+        >
+        <button
+          style="
+            padding: 7px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+          "
+          class="primart_btn"
+          onclick="addToCart(${items[i].id})"
+        >
+          QUICK BUY
+        </button>
+      </div>
+    </div>
+      `;
+      doc.innerHTML += x;
+   }
+   // for New and Trending products
+   const temp_category = item_categories[Math.floor(Math.random()*(item_categories.length))].category;
+   doc = document.getElementById("container_right_image_products_landing");
+   doc.innerHTML = "";
+   items.forEach(item=>{
+      if (item.category==temp_category){
+         var x = `
+         <div
+         style="
+         max-width: 500px;
+         font-size: 0.6rem;
+         display: flex;
+         flex-direction: column;
+         "
+         class="item_card_with_rating"
+         id="item_card_with_rating"
+      >
+         <div class="image">
+         <img
+            style="width: 100%"
+            src="${item.image_url}"
+            alt=""
+            srcset=""
+         />
+         </div>
+         <div
+         style="
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+         "
+         class="content"
+         >
+         <h1>
+            ${item.name}
+         </h1>
+         <span
+            style="
+               font-weight: normal;
+               font-size: 1.4rem;
+               text-align: center;
+            "
+            class="price"
+            >₹ ${item.price}</span
+         >
+         <button
+            style="
+               padding: 7px;
+               background-color: black;
+               color: white;
+               border: 1px solid black;
+            "
+            class="primart_btn"
+
+          onclick="addToCart(${item.id})"
+         >
+            QUICK BUY
+         </button>
+         </div>
+      </div>
+         
+         `;
+         doc.innerHTML += x;
+      }
+   })
+}
+
+function redirectToCategories(category){
+   localStorage.setItem('category', category);
+   window.location.href = './product_page.html'
+}
+
+function loadCategories(){
+   const doc = document.getElementById("circular_img_with_heading_landing");
+   doc.innerHTML = '';
+   item_categories.forEach(item => {
+      const html = `
+      <div id="child" onclick="redirectToCategories('${item.category}')">
+         <img
+         style="width: 80%"
+         src="${item.img}"
+         alt="${item.category}"
+         />
+      </div>
+      `;
+      doc.innerHTML += html;
+   })
 }
 
 function onLoadProductPage() {
-    
+    document.getElementById('products_page_breadcrum').innerHTML = localStorage.getItem('category') || 'View All';
+    loadCategories()
+    //  loadProducts for Best Sellers
+   var doc = document.getElementById("container_landing_all_products");
+   doc.innerHTML = "";
+   items.forEach(item=>{
+      if (item.category.toLowerCase()==localStorage.getItem('category').toLowerCase()){
+         var x = `
+      <div
+      style="
+        max-width: 500px;
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+      "
+      class="item_card_with_rating"
+      id="item_card_with_rating"
+    >
+      <div class="image">
+        <img
+          style="width: 100%"
+          src="${item.image_url}"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        "
+        class="content"
+      >
+        <h1>
+          ${item.name}
+        </h1>
+        <span
+          style="
+            border: 1px solid orangered;
+            width: fit-content;
+            padding: 5px;
+            font-weight: lighter;
+            font-size: small;
+          "
+          class="tag"
+          >${item.category}</span
+        >
+        <span style="font-weight: bold; font-size: 1.4rem" class="price"
+          >₹ ${item.price}</span
+        >
+        <button
+          style="
+            padding: 7px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+          "
+          class="primart_btn"
+          onclick="addToCart(${item.id})"
+        >
+          QUICK BUY
+        </button>
+      </div>
+    </div>
+      `;
+      doc.innerHTML += x;
+      }
+   });
 }
 
 function onLoadSpecificProductPage() {
-    
+    const productId = localStorage.getItem('specificProductId') || '1';
+    const specific_product = items.filter(item=>item.id==productId)[0];
+    document.getElementById('specific_product_image').innerHTML = `
+    <img width="100%" src="${specific_product.image_url}" alt="" srcset="">
+    `;
+    document.getElementById('specific_product_name').innerHTML = specific_product.name;
+    document.getElementById('specific_product_price').innerHTML = '₹ '+specific_product.price;
 }
 
 function onLoadCheckoutPage() {
