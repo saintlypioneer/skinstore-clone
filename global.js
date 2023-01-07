@@ -27,7 +27,6 @@ const items = [
          price: 399.00,
       }
 ];
-
 function addToCart(id){
     // this id is from items
     // localStorage key name => 'cart'
@@ -38,9 +37,10 @@ function getFilteredProducts(category){
 }
 
 function updateBreadcrums(){
-
+    
 }
 
-function updateQuantity(id, typeOfOperation){
 
+function updateQuantity(id, typeOfOperation){
+    
 }
