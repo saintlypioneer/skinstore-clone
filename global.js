@@ -476,6 +476,7 @@ var del_button=document.createElement("button");
 del_button.setAttribute("class","del_button");
 del_button.innerHTML="x";
 del_button.addEventListener("click",function(){
+  event.preventDefault();
   del_buttonFunc(ele,i);
 });
 
@@ -516,11 +517,15 @@ x.append(final_div);
 
 
 
+var c1=1;
+var c2=1;
 
 function increaseQuantity(){
   var q=event.target.parentNode.children[1];
   var val=Number(q.innerHTML);
   q.innerHTML=val+1;
+
+  localStorage.setItem("addclk",c1++);
   var priceOfOne=event.target.parentNode.parentNode.children[2];
   var priceOfNitems=event.target.parentNode.parentNode.children[5];
   //targeting the subtotal price at bottom 
@@ -534,6 +539,7 @@ function decreaseQuantity(){
   var q=event.target.parentNode.children[1];
   var val=Number(q.innerHTML);
   if(q.innerHTML>1){
+    localStorage.setItem("substractclk",c2++);
     q.innerHTML=val-1;
     var priceOfOne=event.target.parentNode.parentNode.children[2];
     var priceOfNitems=event.target.parentNode.parentNode.children[5];
@@ -647,6 +653,20 @@ sum=0;
 
 
 
+function checkoutSEcurelyFunc(){
+  // console.log("hi");
+// var finalCheckoutDetails=JSON.parse(localStorage.getItem("finalCheckoutDetails"))||[];
+var cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+var addclk=JSON.parse(localStorage.getItem("addclk"))||0;
+var substractclk=JSON.parse(localStorage.getItem("substractclk"))||0;
+var quant=addclk+cartItems.length-substractclk;
+localStorage.setItem("finalCheckoutQuantity",JSON.stringify(quant));
+var totPrice=Number(document.querySelector(".totalPriceInFinalDiv").innerHTML);
+localStorage.setItem("finalCheckoutPrice",JSON.stringify(totPrice));
+window.location.href="./checkoutPage.html";
+}
+
+
 function onLoadProductPage() {
     document.getElementById('products_page_breadcrum').innerHTML = localStorage.getItem('category') || 'View All';
     loadCategories()
@@ -731,7 +751,15 @@ function onLoadSpecificProductPage() {
 }
 
 function onLoadCheckoutPage() {
-    
+
+document.querySelector(".total-quantity").innerHTML=localStorage.getItem("finalCheckoutQuantity");
+document.querySelector(".total-price").innerHTML="Rs. "+localStorage.getItem("finalCheckoutPrice");
+
+
+var cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+localStorage.setItem("addclk",0);
+localStorage.setItem("substractclk",0);
+localStorage.setItem("finalCheckoutQuantity",cartItems.length);
 }
 
 function onLoadSigninPage() {
