@@ -644,9 +644,6 @@ sum=0;
   
   final_div.append(p_in_final_div,totalPriceInFinalDiv);
   x.append(final_div);
- 
-
-
 }//del func
 
 }
