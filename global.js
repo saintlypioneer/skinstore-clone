@@ -416,6 +416,237 @@ function loadCategories(){
    })
 }
 
+
+
+var sum =0;
+function onLoadCartPage(){
+var cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+
+// console.log(cartItems);
+var x=document.querySelector(".cart_item_list");
+cartItems.map(function (ele,i){
+  //created div with class created_div
+var div=document.createElement("div");
+div.setAttribute("class","created_div");
+
+//created img with calss created_img
+var img=document.createElement("img");
+img.setAttribute("src",ele.image_url);
+img.setAttribute("class","created_img");
+
+//created p for name with class created_p_for_name
+var name=document.createElement("p");
+name.setAttribute("class","created_p_for_name");
+name.innerHTML=ele.name;
+
+//created p for price with class created_p_for_price
+var price=document.createElement("p");
+price.setAttribute("class","created_p_for_price");
+price.innerHTML=ele.price;
+sum+=Number(ele.price);
+//created div for 2 button and 1 p for quantity
+var div_2=document.createElement("div");
+div_2.setAttribute("class","div_2");
+
+//+ button
+var increase_button=document.createElement("button");
+increase_button.setAttribute("class","increase_button");
+increase_button.innerHTML="+";
+increase_button.addEventListener("click",function(){
+  increaseQuantity(ele,i);
+});
+
+//quantity
+var p_for_quantity=document.createElement("p");
+p_for_quantity.setAttribute("class","p_for_quantity");
+p_for_quantity.innerHTML="1";
+
+//- button
+var decrease_button=document.createElement("button");
+decrease_button.setAttribute("class","decrease_button");
+decrease_button.innerHTML="-";
+decrease_button.addEventListener("click",function(){
+  decreaseQuantity(ele,i);
+});
+
+
+div_2.append(increase_button,p_for_quantity,decrease_button);
+
+var del_button=document.createElement("button");
+del_button.setAttribute("class","del_button");
+del_button.innerHTML="x";
+del_button.addEventListener("click",function(){
+  del_buttonFunc(ele,i);
+});
+
+//created subtotal for particular quantity
+var p_for_subtotal=document.createElement("p");
+p_for_subtotal.setAttribute("class","p_for_subtotal");
+p_for_subtotal.innerHTML=ele.price;
+
+div.append(img,name,price,div_2,del_button,p_for_subtotal);
+
+//total sum is calculated here
+ var price_of_one_item=document.querySelector(".p_for_quantity");
+  // sum+=Number(price_of_one_item.innerHTML);
+  // console.log(price_of_one_item.innerHTML);
+
+
+x.append(div);
+
+
+
+});
+// console.log(sum);
+//created final_div
+var final_div=document.createElement("div");
+final_div.setAttribute("class","final_div");
+ 
+//cart subtotal text
+var p_in_final_div=document.createElement("p");
+p_in_final_div.setAttribute("class","p_in_final_div");
+p_in_final_div.innerHTML="Cart Subtotal:";
+//total price value
+var totalPriceInFinalDiv=document.createElement("p");
+totalPriceInFinalDiv.setAttribute("class","totalPriceInFinalDiv");
+totalPriceInFinalDiv.innerHTML=sum;
+
+final_div.append(p_in_final_div,totalPriceInFinalDiv);
+x.append(final_div);
+
+
+
+
+function increaseQuantity(){
+  var q=event.target.parentNode.children[1];
+  var val=Number(q.innerHTML);
+  q.innerHTML=val+1;
+  var priceOfOne=event.target.parentNode.parentNode.children[2];
+  var priceOfNitems=event.target.parentNode.parentNode.children[5];
+  //targeting the subtotal price at bottom 
+  var xx=event.target.parentNode.parentNode.parentNode.children.length;
+  var yy=event.target.parentNode.parentNode.parentNode.children[xx-1].children[1];
+yy.innerHTML=Number(yy.innerHTML)+Number(priceOfOne.innerHTML);
+  priceOfNitems.innerHTML=Number(priceOfOne.innerHTML)*Number(q.innerHTML);
+    }
+
+function decreaseQuantity(){
+  var q=event.target.parentNode.children[1];
+  var val=Number(q.innerHTML);
+  if(q.innerHTML>1){
+    q.innerHTML=val-1;
+    var priceOfOne=event.target.parentNode.parentNode.children[2];
+    var priceOfNitems=event.target.parentNode.parentNode.children[5];
+    priceOfNitems.innerHTML=Number(priceOfOne.innerHTML)*Number(q.innerHTML);
+    var xx=event.target.parentNode.parentNode.parentNode.children.length;
+    var yy=event.target.parentNode.parentNode.parentNode.children[xx-1].children[1];
+  yy.innerHTML=Number(yy.innerHTML)-Number(priceOfOne.innerHTML);
+    priceOfNitems.innerHTML=Number(priceOfOne.innerHTML)*Number(q.innerHTML);
+  }
+}
+function del_buttonFunc(ele,i){
+var x=document.querySelector(".cart_item_list");
+  var cartItems=JSON.parse(localStorage.getItem("cart"));
+  var xx=event.target.parentNode.parentNode.children.length;
+  var yy=event.target.parentNode.parentNode.children[xx-1].children[1];
+   var cc= event.target.parentNode.children[5];
+yy.innerHTML=Number(yy.innerHTML)-Number(cc.innerHTML);
+  cartItems=cartItems.filter(function(ele,ind){
+return ind!=i;
+  });
+  localStorage.setItem("cart",JSON.stringify(cartItems));
+  document.querySelector(".cart_item_list").innerHTML="";
+sum=0;
+  //map itr 2
+  cartItems.map(function (ele,i){
+    //created div with class created_div
+  var div=document.createElement("div");
+  div.setAttribute("class","created_div");
+  
+  //created img with calss created_img
+  var img=document.createElement("img");
+  img.setAttribute("src",ele.image_url);
+  img.setAttribute("class","created_img");
+  
+  //created p for name with class created_p_for_name
+  var name=document.createElement("p");
+  name.setAttribute("class","created_p_for_name");
+  name.innerHTML=ele.name;
+  
+  //created p for price with class created_p_for_price
+  var price=document.createElement("p");
+  price.setAttribute("class","created_p_for_price");
+  price.innerHTML=ele.price;
+  sum+=Number(ele.price);
+  //created div for 2 button and 1 p for quantity
+  var div_2=document.createElement("div");
+  div_2.setAttribute("class","div_2");
+  
+  //+ button
+  var increase_button=document.createElement("button");
+  increase_button.setAttribute("class","increase_button");
+  increase_button.innerHTML="+";
+  increase_button.addEventListener("click",function(){
+    increaseQuantity(ele,i);
+  });
+  
+  //quantity
+  var p_for_quantity=document.createElement("p");
+  p_for_quantity.setAttribute("class","p_for_quantity");
+  p_for_quantity.innerHTML="1";
+  
+  //- button
+  var decrease_button=document.createElement("button");
+  decrease_button.setAttribute("class","decrease_button");
+  decrease_button.innerHTML="-";
+  decrease_button.addEventListener("click",function(){
+    decreaseQuantity(ele,i);
+  });
+  
+  
+  div_2.append(increase_button,p_for_quantity,decrease_button);
+  
+  var del_button=document.createElement("button");
+  del_button.setAttribute("class","del_button");
+  del_button.innerHTML="x";
+  del_button.addEventListener("click",function(){
+    del_buttonFunc(ele,i);
+  });
+  
+  //created subtotal for particular quantity
+  var p_for_subtotal=document.createElement("p");
+  p_for_subtotal.setAttribute("class","p_for_subtotal");
+  p_for_subtotal.innerHTML=ele.price;
+  
+  div.append(img,name,price,div_2,del_button,p_for_subtotal);
+  
+  //total sum is calculated here
+   var price_of_one_item=document.querySelector(".p_for_quantity");
+  x.append(div);
+  });
+  var final_div=document.createElement("div");
+  final_div.setAttribute("class","final_div");
+   
+  //cart subtotal text
+  var p_in_final_div=document.createElement("p");
+  p_in_final_div.setAttribute("class","p_in_final_div");
+  p_in_final_div.innerHTML="Cart Subtotal:";
+  //total price value
+  var totalPriceInFinalDiv=document.createElement("p");
+  totalPriceInFinalDiv.setAttribute("class","totalPriceInFinalDiv");
+  totalPriceInFinalDiv.innerHTML=sum;
+  
+  final_div.append(p_in_final_div,totalPriceInFinalDiv);
+  x.append(final_div);
+ 
+
+
+}//del func
+
+}
+
+
+
 function onLoadProductPage() {
     document.getElementById('products_page_breadcrum').innerHTML = localStorage.getItem('category') || 'View All';
     loadCategories()
@@ -594,9 +825,14 @@ function onSignUp() {
       "signUpUserDetails",
       JSON.stringify(signUpUserDetailsArr)
     );
+    objUser={
+      name:name,
+      email:email,
+    }
+    localStorage.setItem("user",JSON.stringify(objUser));
     window.location.href = "./index.html";
+    
   }
-
   //not taking phone number as it is optional in web page **
 }
 
