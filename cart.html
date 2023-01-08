@@ -5,8 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <style>
+      .created_div{
+        margin-top: 50px;
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 70px;
+      }
+
+      .created_div img{
+        width: 10%;
+        flex: 1;
+      }
+
+      .created_p_for_name{
+        font-size: 20px;
+        font-weight: bold;
+        flex:5;
+        padding:0 20px;
+      }
+      .created_p_for_price{
+        font-size: 18px;
+        font-weight: bold;
+        flex: 1;
+      } 
+
+      .div_2{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex:1;
+        justify-content: right;
+        padding-right: 20px;
+      }
+      .created_div button{
+        height: 30px;
+        width: 30px;
+        background-color: rgb(235,235,235);
+        border: none;
+      }
+      .p_for_subtotal{
+        flex: 1;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+
+      }
+      .final_div{
+        width: 90%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+.final_div p:nth-child(1){
+  margin-right: 20px;
+  font-style: italic;
+}
+.final_div p:nth-child(2){
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+    </style>
 </head>
-<body>
+<body onload="onLoadCartPage()">
   <!-- Header -->
   <div
       style="width: 100%; display: flex; flex-direction: column; padding-bottom: 10px;"
@@ -201,82 +267,13 @@
         </a>
       </div>
     </div>
-
-
-    <div style="background-color: black; color: white; text-align: center; padding: 5px 5px; margin: auto 10px;" class="text_band" id="text_band">
-      <h1 style="font-size: 1.3rem; margin: 0;">Up to 50% off + Extra 10% off sale Items with code WINTER | SHOP NOW &gt; </h1>
-  </div>
-  <br>
-  <div style="display: flex;
-    background-color: rgb(242,242,242);
-    justify-content: space-evenly;" class="icon_band" id="icon_band">
-       <div style="display: flex; margin: auto;"><img style="width: 30px; margin: 20px; " src="https://static.thenounproject.com/png/3953749-200.png" alt="">
-           <p style="margin-top: 25px; font-weight:600;">FREE US Shipping Over $49</p>
-       </div>
-       <div style=" display: flex; margin: auto"><img style="width: 30px; margin: 20px; " src="https://static.thenounproject.com/png/1813415-200.png" alt="">
-           <p style="margin-top: 25px; font-weight:600;"> Refer a Friend, Get $15</p>
-       </div>
-
-       <div style="display: flex; margin: auto"><img style="width: 30px; margin: 20px;" src="https://static.thenounproject.com/png/1153369-200.png" alt="">
-           <p style="margin-top: 25px; font-weight:600;"> New Customers Save 20% - Use Code NEWBIE</p>
-       </div>
-
-       <div style="display: flex; margin: auto"><img style="width: 30px; margin: 20px;" src="https://static.thenounproject.com/png/3351092-200.png" alt="">
-           <p style="margin-top: 25px; font-weight:600"> Download Our App</p>
-       </div>
-   </div>
-   <br>
-   <div style="background-color: rgb(168, 241, 168); color: green; padding: 5px 5px; margin: auto 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;" class="text_band" id="text_band">
-    <p style="font-size: 1.3rem; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;"><i class="fa-solid fa-circle-check"></i> You have qualified for: <b style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;">Free ISDIN Micellar Solution. 4 in 1 Makeup Remover(worth $35)When you spend $80 or more on the brand</b></p>
-    </div>
-
-    <div>
-      <h3>Your Cart</h3>
-  </div>
-  <div style="width: 100%;" class="cart_item_list">
-    <div style="display: grid; grid-template-columns: 6fr 2fr 1fr 2fr; font-weight: bold; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;" class="head">
-      <span style="padding: 15px;">Items</span>
-      <span style="padding: 15px; text-align: center;">Price</span><span style="padding: 15px; text-align: center;">Quantity</span><span style="padding: 15px; text-align: center;">Subtotal</span>
-    </div>
-    <div style="display: grid; grid-template-columns: 6fr 2fr 1fr 2fr; padding: 2rem;" class="trow">
-      <div style="display: flex;" class="trow_item">
-        <div style="flex: 2;" class="trow_item_img">
-          <img width="100%" src="./assets/images/image-16.jpg" alt="" srcset="">
-        </div>
-        <div style="flex: 10; display: flex; flex-direction: column; justify-content: space-around;" class="trow_item_right">
-          <p style="font-size: 1.5rem;">Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-          <button style="display: grid; grid-template-columns: 2fr 8fr; width: 28%; justify-content: center; align-items: center; padding: 5px; background: transparent; border: none; margin-left: 10px; margin-top: 15px;">
-            <img style="width: 25px;" src="./assets/images/heart.png" alt="" srcset="">
-            <p style="font-size: 1rem; font-weight: bold;">Save to Wishlist</p>
-          </button>
-        </div>
+    <div style="width: 100%;" class="cart_item_list">
+      <div style="display: grid; grid-template-columns: 6fr 2fr 1fr 2fr; font-weight: bold; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;" class="head">
+        <span style="padding: 15px;">Items</span>
+        <span style="padding: 15px; text-align: center;">Price</span><span style="padding: 15px; text-align: center;">Quantity</span><span style="padding: 15px; text-align: center;">Subtotal</span>
       </div>
-      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" class="trow_price">
-        <p style="font-size: 1.5rem; font-weight: normal;">$12345.29</p>
-      </div>
-      <div style="display: flex; justify-content: space-evenly; align-items: center;" class="trow_quantity">
-        <div style="background-color: rgb(194, 194, 194); color: white; padding: 5px 10px; height: min-content; border: none;" class="trow_quantity_left">+</div>
-        <span>22</span>
-        <div style="background-color: rgb(194, 194, 194); color: white; padding: 5px 12px; height: min-content; border: none;" class="trow_quantity_right">-</div>
-      </div>
-      <div style="display: flex; justify-content: center; align-items: center;" class="trow_subtotal">
-        <p style="font-size: 1.5rem; font-weight: bold;">$12345.29</p>
-      </div>
+    
     </div>
-  </div>
-
-  <div style="display: grid; grid-template-columns:6fr 2fr; font-weight: bold; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;" class="head">
-    <span style="padding: 15px; text-align:right">Cart Subtotal:</span>
-    <span style="padding: 15px; text-align:left">$12345.29</span>
-    </div>
-    <div style="display: grid; grid-template-columns:1fr 1fr; font-weight: bold; border-top: 1px  width: 50%; height: 40px;margin-left: 300px; padding: 20px;">
-      <input type="text" placeholder="Get a coupon code? Enter it here" style="display: inline-flex;">
-      <button style="width: 90px;">Add</button>
-  </div>
-
-
-
-
     <!-- Footer -->
     <div class="footer" id="footer">
         <hr style="margin-bottom: 20px; margin-top: 50px;">
