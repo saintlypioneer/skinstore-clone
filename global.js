@@ -899,18 +899,22 @@ function submitOrder(){
   const expiry_month = document.getElementById('month');
   const expiry_year = document.getElementById('year');
   const cvv = document.getElementById('cvv');
-  if (email.length == 1 ||
-    name.length == 1 ||
-    address.length == 1 ||
-    number.length == 1 ||
-    card_number.length == 1 ||
-    card_name.length == 1 ||
-    expiry_month.length == 1 ||
-    expiry_year.length == 1 ||
-    cvv.length == 1){
+
+  // console.log("card_number");
+  if (email.value.length == 0 ||
+    name.value.length == 0 ||
+    address.value.length == 0 ||
+    number.value.length == 0 ||
+    card_number.value.length == 0 ||
+    card_name.value.length == 0 ||
+    expiry_month.value.length == 0 ||
+    expiry_year.value.length == 0 ||
+    cvv.value.length == 0){
       window.alert("Please Enter valid details.");
       return;
     }
-  window.alert("Order Placed! Have a great Day.");
+  else{
+    window.alert("Order Placed! Have a great Day.");
   window.location.href = './index.html';
+  }
 }
