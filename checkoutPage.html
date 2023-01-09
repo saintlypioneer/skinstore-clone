@@ -35,7 +35,7 @@
 
     </style>
 </head>
-<body style="    font-family: Lato, Helvetica, Arial, sans-serif;">
+<body  onload="onLoadCheckoutPage()" style="    font-family: Lato, Helvetica, Arial, sans-serif;" >
   <div
   style="width: 100%; display: flex; flex-direction: column; background-color: white; "
   class="header"
@@ -161,7 +161,7 @@
             <div style="display: flex; justify-content: space-between; ">
                 <p style="font-weight:bold; font-size: 15px;">Order Summary</p>
                 <!-- change total quantity here -->
-                <p style="font-size: 14px;"> <b class="total-quantity" style="font-size: 15px;">1</b> item</p>
+                <p style="font-size: 14px;"> <b class="total-quantity" style="font-size: 15px;">0</b> items</p>
             </div>
             <div class="orderId" style="display: flex;"><p>Order Number:</p> <p class="IdOfOrder" style="margin-left: 5px;">459841805</p></div>
             <hr>
@@ -173,7 +173,7 @@
             <div style="display: flex; justify-content: space-between;" >
                 <p style="font-size: 18px; font-family: Lato, Helvetica, Arial, sans-serif;">Total to pay</p>
               <!-- change total price here -->
-              <p class="total-price" style="font-size: 18px; font-family: Lato, Helvetica, Arial, sans-serif; ">$58.00</p>
+              <p class="total-price" style="font-size: 18px; font-family: Lato, Helvetica, Arial, sans-serif; ">0.00</p>
             </div>
         </div>
         
@@ -282,6 +282,7 @@
             <i class="fa-solid fa-lock" style="margin-left: 10px;"></i>
             <p style="margin-left:5px ; margin: auto;">SUBMIT MY ORDER</p> </button>
         </div>
+        <div id="user_name" style="display: hidden;"></div>
 </body>
 <script src="./global.js"></script>
 </html>
