@@ -36,7 +36,7 @@ var product_items = [
    {
       id: 5,
       image_url: "https://static.thcdn.com/images/small/original//productimg/original/13280908-8024900284917718.jpg",
-      name: " Unplugged Styler - Cordless Flat Iron (Black)",
+      name: " Unplugged Styler - Cordless Flat Iron",
       category: " Hair Care",
       price: 299.00,
    },
@@ -44,7 +44,7 @@ var product_items = [
    {
       id: 6,
       image_url: "https://static.thcdn.com/images/small/original//productimg/original/13554654-1074930173695055.jpg",
-      name: " T3 Afar Travel Dryer",
+      name: " T3 Afar Travel Hair Dryer",
       category: "Hair Care",
       price: 179.99,
    },
@@ -69,7 +69,7 @@ var product_items = [
    {
       id: 9,
       image_url: "https://static.thcdn.com/images/small/original//productimg/original/13937560-1154998594986205.jpg",
-      name: " Chantecaille Oil Free Balancing Moisturizer 50g",
+      name: " Chantecaille Oil Free Balancing Moisturizer",
       category: "Makeup and Cosmetics",
       price: 75.00,
    },
@@ -77,23 +77,23 @@ var product_items = [
    {
       id: 10,
       image_url: "https://static.thcdn.com/images/small/original/productimg/1600/1600/11567391-1644522663544346.jpg",
-      name: " Dermablend Natural Finish Set (Various Shades)",
+      name: " Dermablend Natural Finish Set",
       category: "Makeup and Cosmetics",
       price: 64.00,
    },
 
    {
       id: 11,
-      image_url: "https://static.thcdn.com/images/small/original//productimg/original/11348400-1224871519735586.jpg",
-      name: " Colorescience Natural Finish Pressed Foundation SPF20 (Various Shades)",
+      image_url: "https://static.thcdn.com/images/large/webp//productimg/1600/1600/11397659-1154871067742002.jpg",
+      name: " Avène High Protection Tinted",
       category: "Makeup and Cosmetics",
-      price: 59.00,
+      price: 38.00,
    },
 
    {
       id: 12,
       image_url: "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11752239-8694597305372915.jpg",
-      name: "Koh Gen Do Maifanshi Moisture Fit Concealer 7g (Various Shades)",
+      name: "Koh Gen Do Maifanshi Moisture Fit Concealer",
       category: "Makeup and Cosmetics",
       price: 63.00,
    },
@@ -109,7 +109,7 @@ var product_items = [
    {
       id: 14,
       image_url: "https://static.thcdn.com/images/small/original//productimg/original/11378683-1514991779261836.jpg",
-      name: "Illamasqua Antimatter Lipstick (Various Shades)",
+      name: "Illamasqua Antimatter Lipstick",
       category: "Makeup and Cosmetics",
       price: 11.00,
    },
@@ -117,7 +117,7 @@ var product_items = [
    {
       id: 15,
       image_url: "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11742829-1834590785162913.jpg",
-      name: "TONYMOLY Petit Bunny Gloss Bars (Option: 02 | Juicy Grape)",
+      name: "TONYMOLY Petit Bunny Gloss Bars",
       category: "Makeup and Cosmetics",
       price: 8.00,
    },
@@ -125,7 +125,7 @@ var product_items = [
    {
       id: 16,
       image_url: "https://static.thcdn.com/images/small/original//productimg/original/12657561-1764964030368092.jpg",
-      name: "Stila Sketch and Sculpt Brow Pencil 4g (Various Shades)",
+      name: "Stila Sketch and Sculpt Brow Pencil",
       category: "Makeup and Cosmetics",
       price: 20.00,
    },
@@ -158,7 +158,7 @@ var product_items = [
    {
       id: 20,
       image_url: "https://static.thcdn.com/images/small/original//productimg/original/13030216-1194867945123005.jpg",
-      name: "Soon Skincare Clear Day Broad Spectrum SPF50 2 oz",
+      name: "Soon Skincare Clear Day Broad Spectrum SPF50",
       category: "Bath & Body",
       price: 48.00,
    },
