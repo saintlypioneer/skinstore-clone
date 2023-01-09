@@ -1,187 +1,169 @@
 const items = [
-  //Skincare products
-  {
+
+   //Skincare products
+   {
     id: 1,
-    image_url:
-      "https://static.thcdn.com/images/small/original/productimg/1600/1600/11401314-1954461013882644.jpg",
+    image_url: "https://static.thcdn.com/images/small/original/productimg/1600/1600/11401314-1954461013882644.jpg",
     name: "3LAB Anti-Ageing Cream 60ml",
     category: "Skincare",
-    price: 750.0,
-  },
+    price: 750.00,
+ },
 
-  {
+ {
     id: 2,
-    image_url:
-      "https://static.thcdn.com/images/small/original/productimg/1600/1600/12038576-2264648083937035.jpg",
+    image_url: "https://static.thcdn.com/images/small/original/productimg/1600/1600/12038576-2264648083937035.jpg",
     name: "Omorovicza Best Sellers Set",
     category: "Skincare",
-    price: 480.0,
-  },
+    price: 480.00,
+ },
 
-  {
+ {
     id: 3,
-    image_url:
-      "https://static.thcdn.com/images/small/webp//productimg/1600/1600/12538011-5734765050447840.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp//productimg/1600/1600/12538011-5734765050447840.jpg",
     name: "Omorovicza Evening CBD Facial Set",
     category: "Skincare",
-    price: 402.0,
-  },
+    price: 402.00,
+ },
 
-  {
+ {
     id: 4,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/13928075-1205002137017610.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/13928075-1205002137017610.jpg",
     name: " Zutta LED Mask - Sapphira",
     category: "Skincare",
-    price: 399.0,
-  },
+    price: 399.00,
+ },
 
-  //Hair products
-  {
+ //Hair products
+ {
     id: 5,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/13280908-8024900284917718.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/13280908-8024900284917718.jpg",
     name: " Unplugged Styler - Cordless Flat Iron (Black)",
     category: " Hair Care",
-    price: 299.0,
-  },
+    price: 299.00,
+ },
 
-  {
+ {
     id: 6,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/13554654-1074930173695055.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/13554654-1074930173695055.jpg",
     name: " T3 Afar Travel Dryer",
     category: "Hair Care",
     price: 179.99,
-  },
+ },
 
-  {
+ {
     id: 7,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/11785994-1984985603593023.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/11785994-1984985603593023.jpg",
     name: " Philip B Icelandic Blonde Shampoo 32 fl oz/947ml",
     category: "Hair Care",
-    price: 150.0,
-  },
+    price: 150.00,
+ },
 
-  {
+ {
     id: 8,
-    image_url:
-      "https://static.thcdn.com/images/small/webp//productimg/original/13282502-3944891492637181.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp//productimg/original/13282502-3944891492637181.jpg",
     name: " VIRTUE Healthy Scalp Trio",
     category: "Hair Care",
-    price: 134.0,
-  },
+    price: 134.00,
+ },
 
-  //makeup & cosmetics
-  {
+ //makeup & cosmetics
+ {
     id: 9,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/13937560-1154998594986205.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/13937560-1154998594986205.jpg",
     name: " Chantecaille Oil Free Balancing Moisturizer 50g",
     category: "Makeup and Cosmetics",
-    price: 75.0,
-  },
+    price: 75.00,
+ },
 
-  {
+ {
     id: 10,
-    image_url:
-      "https://static.thcdn.com/images/small/original/productimg/1600/1600/11567391-1644522663544346.jpg",
+    image_url: "https://static.thcdn.com/images/small/original/productimg/1600/1600/11567391-1644522663544346.jpg",
     name: " Dermablend Natural Finish Set (Various Shades)",
     category: "Makeup and Cosmetics",
-    price: 64.0,
-  },
+    price: 64.00,
+ },
 
-  {
+ {
     id: 11,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/11348400-1224871519735586.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/11348400-1224871519735586.jpg",
     name: " Colorescience Natural Finish Pressed Foundation SPF20 (Various Shades)",
     category: "Makeup and Cosmetics",
-    price: 59.0,
-  },
+    price: 59.00,
+ },
 
-  {
+ {
     id: 12,
-    image_url:
-      "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11752239-8694597305372915.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11752239-8694597305372915.jpg",
     name: "Koh Gen Do Maifanshi Moisture Fit Concealer 7g (Various Shades)",
     category: "Makeup and Cosmetics",
-    price: 63.0,
-  },
+    price: 63.00,
+ },
 
-  {
+ {
     id: 13,
-    image_url:
-      "https://static.thcdn.com/images/small/webp//productimg/original/11065895-5134853691666783.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp//productimg/original/11065895-5134853691666783.jpg",
     name: "NUDESTIX Mascara - Black",
     category: "Makeup and Cosmetics",
-    price: 28.0,
-  },
+    price: 28.00,
+ },
 
-  {
+ {
     id: 14,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/11378683-1514991779261836.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/11378683-1514991779261836.jpg",
     name: "Illamasqua Antimatter Lipstick (Various Shades)",
     category: "Makeup and Cosmetics",
-    price: 11.0,
-  },
+    price: 11.00,
+ },
 
-  {
+ {
     id: 15,
-    image_url:
-      "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11742829-1834590785162913.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11742829-1834590785162913.jpg",
     name: "TONYMOLY Petit Bunny Gloss Bars (Option: 02 | Juicy Grape)",
     category: "Makeup and Cosmetics",
-    price: 8.0,
-  },
+    price: 8.00,
+ },
 
-  {
+ {
     id: 16,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/12657561-1764964030368092.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/12657561-1764964030368092.jpg",
     name: "Stila Sketch and Sculpt Brow Pencil 4g (Various Shades)",
     category: "Makeup and Cosmetics",
-    price: 20.0,
-  },
+    price: 20.00,
+ },
 
-  //Bath & Body
-  {
+ //Bath & Body
+ {
     id: 17,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/12507566-5965014350757716.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/12507566-5965014350757716.jpg",
     name: " Mama Mio Supersize Bundle",
     category: "Bath & Body",
-    price: 91.0,
-  },
+    price: 91.00,
+ },
 
-  {
+ {
     id: 18,
-    image_url:
-      "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11725414-2914576050842040.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11725414-2914576050842040.jpg",
     name: "Elemis Love Yourself Bundle",
     category: "Bath & Body",
-    price: 79.6,
-  },
+    price: 79.60,
+ },
 
-  {
+ {
     id: 19,
-    image_url:
-      "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11691581-4674555612912272.jpg",
+    image_url: "https://static.thcdn.com/images/small/webp/productimg/1600/1600/11691581-4674555612912272.jpg",
     name: "Elemis Body Performance Bundle",
     category: "Bath & Body",
-    price: 108.5,
-  },
+    price: 108.50,
+ },
 
-  {
+ {
     id: 20,
-    image_url:
-      "https://static.thcdn.com/images/small/original//productimg/original/13030216-1194867945123005.jpg",
+    image_url: "https://static.thcdn.com/images/small/original//productimg/original/13030216-1194867945123005.jpg",
     name: "Soon Skincare Clear Day Broad Spectrum SPF50 2 oz",
     category: "Bath & Body",
-    price: 48.0,
-  },
+    price: 48.00,
+ }
+
 ];
 
 const item_categories = [
@@ -434,6 +416,258 @@ function loadCategories(){
    })
 }
 
+
+
+var sum =0;
+function onLoadCartPage(){
+var cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+
+// console.log(cartItems);
+var x=document.querySelector(".cart_item_list");
+cartItems.map(function (ele,i){
+  //created div with class created_div
+var div=document.createElement("div");
+div.setAttribute("class","created_div");
+
+//created img with calss created_img
+var img=document.createElement("img");
+img.setAttribute("src",ele.image_url);
+img.setAttribute("class","created_img");
+
+//created p for name with class created_p_for_name
+var name=document.createElement("p");
+name.setAttribute("class","created_p_for_name");
+name.innerHTML=ele.name;
+
+//created p for price with class created_p_for_price
+var price=document.createElement("p");
+price.setAttribute("class","created_p_for_price");
+price.innerHTML=ele.price;
+sum+=Number(ele.price);
+//created div for 2 button and 1 p for quantity
+var div_2=document.createElement("div");
+div_2.setAttribute("class","div_2");
+
+//+ button
+var increase_button=document.createElement("button");
+increase_button.setAttribute("class","increase_button");
+increase_button.innerHTML="+";
+increase_button.addEventListener("click",function(){
+  increaseQuantity(ele,i);
+});
+
+//quantity
+var p_for_quantity=document.createElement("p");
+p_for_quantity.setAttribute("class","p_for_quantity");
+p_for_quantity.innerHTML="1";
+
+//- button
+var decrease_button=document.createElement("button");
+decrease_button.setAttribute("class","decrease_button");
+decrease_button.innerHTML="-";
+decrease_button.addEventListener("click",function(){
+  decreaseQuantity(ele,i);
+});
+
+
+div_2.append(increase_button,p_for_quantity,decrease_button);
+
+var del_button=document.createElement("button");
+del_button.setAttribute("class","del_button");
+del_button.innerHTML="x";
+del_button.addEventListener("click",function(){
+
+  del_buttonFunc(ele,i);
+});
+
+//created subtotal for particular quantity
+var p_for_subtotal=document.createElement("p");
+p_for_subtotal.setAttribute("class","p_for_subtotal");
+p_for_subtotal.innerHTML=ele.price;
+
+div.append(img,name,price,div_2,del_button,p_for_subtotal);
+
+//total sum is calculated here
+ var price_of_one_item=document.querySelector(".p_for_quantity");
+  // sum+=Number(price_of_one_item.innerHTML);
+  // console.log(price_of_one_item.innerHTML);
+
+
+x.append(div);
+
+
+
+});
+// console.log(sum);
+//created final_div
+var final_div=document.createElement("div");
+final_div.setAttribute("class","final_div");
+ 
+//cart subtotal text
+var p_in_final_div=document.createElement("p");
+p_in_final_div.setAttribute("class","p_in_final_div");
+p_in_final_div.innerHTML="Cart Subtotal:";
+//total price value
+var totalPriceInFinalDiv=document.createElement("p");
+totalPriceInFinalDiv.setAttribute("class","totalPriceInFinalDiv");
+totalPriceInFinalDiv.innerHTML=sum;
+
+final_div.append(p_in_final_div,totalPriceInFinalDiv);
+x.append(final_div);
+
+
+
+var c1=1;
+var c2=1;
+
+function increaseQuantity(){
+  var q=event.target.parentNode.children[1];
+  var val=Number(q.innerHTML);
+  q.innerHTML=val+1;
+
+
+  localStorage.setItem("addclk",c1++);
+
+  var priceOfOne=event.target.parentNode.parentNode.children[2];
+  var priceOfNitems=event.target.parentNode.parentNode.children[5];
+  //targeting the subtotal price at bottom 
+  var xx=event.target.parentNode.parentNode.parentNode.children.length;
+  var yy=event.target.parentNode.parentNode.parentNode.children[xx-1].children[1];
+yy.innerHTML=Number(yy.innerHTML)+Number(priceOfOne.innerHTML);
+  priceOfNitems.innerHTML=Number(priceOfOne.innerHTML)*Number(q.innerHTML);
+    }
+
+function decreaseQuantity(){
+  var q=event.target.parentNode.children[1];
+  var val=Number(q.innerHTML);
+  if(q.innerHTML>1){
+
+    localStorage.setItem("substractclk",c2++);
+
+    q.innerHTML=val-1;
+    var priceOfOne=event.target.parentNode.parentNode.children[2];
+    var priceOfNitems=event.target.parentNode.parentNode.children[5];
+    priceOfNitems.innerHTML=Number(priceOfOne.innerHTML)*Number(q.innerHTML);
+    var xx=event.target.parentNode.parentNode.parentNode.children.length;
+    var yy=event.target.parentNode.parentNode.parentNode.children[xx-1].children[1];
+  yy.innerHTML=Number(yy.innerHTML)-Number(priceOfOne.innerHTML);
+    priceOfNitems.innerHTML=Number(priceOfOne.innerHTML)*Number(q.innerHTML);
+  }
+}
+function del_buttonFunc(ele,i){
+var x=document.querySelector(".cart_item_list");
+  var cartItems=JSON.parse(localStorage.getItem("cart"));
+  var xx=event.target.parentNode.parentNode.children.length;
+  var yy=event.target.parentNode.parentNode.children[xx-1].children[1];
+   var cc= event.target.parentNode.children[5];
+yy.innerHTML=Number(yy.innerHTML)-Number(cc.innerHTML);
+  cartItems=cartItems.filter(function(ele,ind){
+return ind!=i;
+  });
+  localStorage.setItem("cart",JSON.stringify(cartItems));
+  document.querySelector(".cart_item_list").innerHTML="";
+sum=0;
+  //map itr 2
+  cartItems.map(function (ele,i){
+    //created div with class created_div
+  var div=document.createElement("div");
+  div.setAttribute("class","created_div");
+  
+  //created img with calss created_img
+  var img=document.createElement("img");
+  img.setAttribute("src",ele.image_url);
+  img.setAttribute("class","created_img");
+  
+  //created p for name with class created_p_for_name
+  var name=document.createElement("p");
+  name.setAttribute("class","created_p_for_name");
+  name.innerHTML=ele.name;
+  
+  //created p for price with class created_p_for_price
+  var price=document.createElement("p");
+  price.setAttribute("class","created_p_for_price");
+  price.innerHTML=ele.price;
+  sum+=Number(ele.price);
+  //created div for 2 button and 1 p for quantity
+  var div_2=document.createElement("div");
+  div_2.setAttribute("class","div_2");
+  
+  //+ button
+  var increase_button=document.createElement("button");
+  increase_button.setAttribute("class","increase_button");
+  increase_button.innerHTML="+";
+  increase_button.addEventListener("click",function(){
+    increaseQuantity(ele,i);
+  });
+  
+  //quantity
+  var p_for_quantity=document.createElement("p");
+  p_for_quantity.setAttribute("class","p_for_quantity");
+  p_for_quantity.innerHTML="1";
+  
+  //- button
+  var decrease_button=document.createElement("button");
+  decrease_button.setAttribute("class","decrease_button");
+  decrease_button.innerHTML="-";
+  decrease_button.addEventListener("click",function(){
+    decreaseQuantity(ele,i);
+  });
+  
+  
+  div_2.append(increase_button,p_for_quantity,decrease_button);
+  
+  var del_button=document.createElement("button");
+  del_button.setAttribute("class","del_button");
+  del_button.innerHTML="x";
+  del_button.addEventListener("click",function(){
+    del_buttonFunc(ele,i);
+  });
+  
+  //created subtotal for particular quantity
+  var p_for_subtotal=document.createElement("p");
+  p_for_subtotal.setAttribute("class","p_for_subtotal");
+  p_for_subtotal.innerHTML=ele.price;
+  
+  div.append(img,name,price,div_2,del_button,p_for_subtotal);
+  
+  //total sum is calculated here
+   var price_of_one_item=document.querySelector(".p_for_quantity");
+  x.append(div);
+  });
+  var final_div=document.createElement("div");
+  final_div.setAttribute("class","final_div");
+   
+  //cart subtotal text
+  var p_in_final_div=document.createElement("p");
+  p_in_final_div.setAttribute("class","p_in_final_div");
+  p_in_final_div.innerHTML="Cart Subtotal:";
+  //total price value
+  var totalPriceInFinalDiv=document.createElement("p");
+  totalPriceInFinalDiv.setAttribute("class","totalPriceInFinalDiv");
+  totalPriceInFinalDiv.innerHTML=sum;
+  
+  final_div.append(p_in_final_div,totalPriceInFinalDiv);
+  x.append(final_div);
+
+}//del func
+
+}
+
+
+
+function checkoutSEcurelyFunc(){
+  // console.log("hi");
+// var finalCheckoutDetails=JSON.parse(localStorage.getItem("finalCheckoutDetails"))||[];
+var cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+var addclk=JSON.parse(localStorage.getItem("addclk"))||0;
+var substractclk=JSON.parse(localStorage.getItem("substractclk"))||0;
+var quant=addclk+cartItems.length-substractclk;
+localStorage.setItem("finalCheckoutQuantity",JSON.stringify(quant));
+var totPrice=Number(document.querySelector(".totalPriceInFinalDiv").innerHTML);
+localStorage.setItem("finalCheckoutPrice",JSON.stringify(totPrice));
+window.location.href="./checkoutPage.html";
+}
+
 function onLoadProductPage() {
     document.getElementById('products_page_breadcrum').innerHTML = localStorage.getItem('category') || 'View All';
     loadCategories()
@@ -518,7 +752,15 @@ function onLoadSpecificProductPage() {
 }
 
 function onLoadCheckoutPage() {
-    
+
+document.querySelector(".total-quantity").innerHTML=localStorage.getItem("finalCheckoutQuantity");
+document.querySelector(".total-price").innerHTML="Rs. "+localStorage.getItem("finalCheckoutPrice");
+
+
+var cartItems=JSON.parse(localStorage.getItem("cart"))||[];
+localStorage.setItem("addclk",0);
+localStorage.setItem("substractclk",0);
+localStorage.setItem("finalCheckoutQuantity",cartItems.length);
 }
 
 function onLoadSigninPage() {
@@ -612,9 +854,14 @@ function onSignUp() {
       "signUpUserDetails",
       JSON.stringify(signUpUserDetailsArr)
     );
+    objUser={
+      name:name,
+      email:email,
+    }
+    localStorage.setItem("user",JSON.stringify(objUser));
     window.location.href = "./index.html";
+    
   }
-
   //not taking phone number as it is optional in web page **
 }
 
@@ -652,6 +899,7 @@ function submitOrder(){
   const expiry_month = document.getElementById('month');
   const expiry_year = document.getElementById('year');
   const cvv = document.getElementById('cvv');
+
   // console.log("card_number");
   if (email.value.length == 0 ||
     name.value.length == 0 ||
