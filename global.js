@@ -640,3 +640,30 @@ if (passwordDiv != null) {
     passwordDiv.parentNode.children[1].addEventListener("click", showPassFunc);
   }
 }
+
+function submitOrder(){
+  event.preventDefault();
+  const email = document.getElementById('email');
+  const name = document.getElementById('f_name');
+  const address = document.getElementById('address');
+  const number = document.getElementById('number');
+  const card_number = document.getElementById('card_number');
+  const card_name = document.getElementById('card_name');
+  const expiry_month = document.getElementById('month');
+  const expiry_year = document.getElementById('year');
+  const cvv = document.getElementById('cvv');
+  if (email.length == 1 ||
+    name.length == 1 ||
+    address.length == 1 ||
+    number.length == 1 ||
+    card_number.length == 1 ||
+    card_name.length == 1 ||
+    expiry_month.length == 1 ||
+    expiry_year.length == 1 ||
+    cvv.length == 1){
+      window.alert("Please Enter valid details.");
+      return;
+    }
+  window.alert("Order Placed! Have a great Day.");
+  window.location.href = './index.html';
+}
