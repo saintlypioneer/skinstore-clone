@@ -16,8 +16,9 @@
   </style>
   </head>
   <body style=" background-color: rgb(242,242,242);">
+    <!-- Header -->
     <div
-      style="width: 100%; display: flex; flex-direction: column"
+      style="width: 100%; display: flex; flex-direction: column; padding-bottom: 10px;"
       class="header"
       id="header"
     >
@@ -28,6 +29,7 @@
             src="./assets/svg/vector12.svg"
             alt=""
             srcset=""
+            onclick="window.location.href='./index.html'"
           />
         </div>
         <div style="flex: 2; display: flex; align-items: center" class="search">
@@ -83,13 +85,14 @@
               align-items: center;
               gap: 5px;
             "
+            onclick="window.location.href='./signin.html'"
           >
             <img
               style="max-width: 20px"
               src="./assets/images/user.png"
               alt=""
             />
-            <span>Account</span>
+            <span id="user_name">Account</span>
           </button>
           <button
             style="
@@ -101,6 +104,7 @@
               align-items: center;
               gap: 5px;
             "
+            onclick="window.location.href='./cart.html'"
           >
             <img
               style="max-width: 20px"
@@ -156,8 +160,10 @@
           "
           href="#"
           class="text_button"
+
+          onclick="redirectToCategories('Bath & Body')"
         >
-          Sale
+          Bath & Body
         </a>
         <a
           style="
@@ -168,6 +174,7 @@
             transition: all 0.5s;
           "
           href="#"
+          onclick="redirectToCategories('SkinCare')"
           class="text_button"
         >
           Skin Care
@@ -181,6 +188,7 @@
             transition: all 0.5s;
           "
           href="#"
+          onclick="redirectToCategories('Hair Care')"
           class="text_button"
         >
           Hair
@@ -195,6 +203,8 @@
           "
           href="#"
           class="text_button"
+
+          onclick="redirectToCategories('Makup and Cosmetics')"
         >
           Makeup
         </a>
